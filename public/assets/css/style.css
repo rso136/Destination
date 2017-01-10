@@ -57,6 +57,7 @@ li.menuOption > a > b {
 
 #introBar {
   margin-top: 3vh;
+  margin-bottom: 15vh;
   text-align: center;
 }
 
@@ -85,8 +86,13 @@ li.menuOption > a > b {
 }
 
 #forecastBar {
-  background-color: black;
+  background-color: #34373a;
   color: white;
+  text-align: center;
+}
+
+#forecastHeading {
+  margin-bottom: 2vh;
 }
 
 #foreCastA, #foreCastB, #foreCastC, #foreCastD, #foreCastE {
@@ -104,6 +110,17 @@ li.menuOption > a > b {
 #eventBar {
   text-align: center;
   color: black;
+}
+
+#errorBar {
+  text-align: center;
+  margin-top: 5vh;
+  margin-bottom: 15vh;
+}
+
+#noEventsBar {
+  margin-bottom: 15vh;
+  text-align: center;
 }
 
 #eventHeading {

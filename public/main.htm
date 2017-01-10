@@ -1,13 +1,15 @@
 <div class="row">
 	<div class="col-md-2 col-md-offset-5 col-xs-12">
-		<input ng-model="origin" type="text" class="form-control" placeholder="Origin (e.g. Edison, NJ)" id="query">
+	<form ng-submit="search();">	
+		<input ng-model="origin" type="text" class="form-control" placeholder="Origin (e.g. Edison, NJ)" id="query" required/>
 		<br>
     	<div class="input-group">
-			<input ng-model="destination" ng-model-options="{updateOn:'blur'}" type="text" class="form-control" placeholder="Destination (e.g. New York City)">
+			<input ng-model="destination" ng-model-options="{updateOn:'blur'}" type="text" class="form-control" placeholder="Destination (e.g. New York City)" required/>
     		<span class="input-group-btn">
-        		<button ng-click="search();" class="btn btn-custom" type="button"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></button>
+        		<button class="btn btn-custom" type="submit"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></button>
       		</span>    	
-    	</div>		
+    	</div>
+	</form>
 	</div>	
 </div>
 <div class="row">
@@ -16,16 +18,18 @@
 	</div>
 </div>
 <div class="row">
+	<div ng-show="weatherErr" class="col-md-12 col-xs-12" id="errorBar">
+		<h3>Weather information unavailable for {{destination}}</h3>
+	</div>
+</div>
+<div class="row">
 	<div ng-show="infoDisplay" class="col-md-12 col-xs-12" id="weatherBar">
 		<div ng-show='weatherInfo' class="col-md-4 col-md-offset-2 col-xs-12" id="weatherBox">
 			<h2 class="capitalize">{{destination}}</h2>
 			<h4 class="capitalize">{{forecast}}</h4>
-			<!--<img src="assets/images/sunny.png" class="weatherIcon" height="125" width="125">-->
 			<p id="temperature">{{temp}}&deg;</p>
 		</div>
-		<div ng-show='trafficInfo' class="col-md-4 col-xs-12" id="trafficBox">
-			<br>
-			<br>	
+		<div ng-show='trafficInfo' class="col-md-4 col-xs-12" id="trafficBox">	
 			<h2>Current driving time to {{destination}}:</h2>
 			<h2><b>{{driveTime}}</b></h2>
 			<h3 id="trafficLevel">Traffic level: {{congestion}}</h3>				
@@ -34,33 +38,33 @@
 </div>
 <div class="row">
 	<div ng-show="forecastDisplay" class="col-md-12 col-xs-12" id="forecastBar">
-		<div class="container">
-		<div class="col-md-1 col-xs-6" id="foreCastA">
-			<p class="des">{{fiveDates[0]}}</p>
+		<h4 id="forecastHeading"><b>4-Day Noon Forecast</b></h4>
+		<div class="col-md-1 col-md-offset-4 col-xs-6" id="foreCastA">
+			<p>{{fiveDates[0]}}</p>
 			<p><b>{{fiveForecast[0]}}&deg;</b></p>
 			<p class="capitalize des">{{fiveConditions[0]}}</p>
 		</div>
 		<div class="col-md-1 col-xs-6" id="foreCastB">
-			<p class="des">{{fiveDates[1]}}</p>
+			<p>{{fiveDates[1]}}</p>
 			<p><b>{{fiveForecast[1]}}&deg;</b></p>
 			<p class="capitalize des">{{fiveConditions[1]}}</p>
 		</div>
 		<div class="col-md-1 col-xs-6" id="foreCastC">
-			<p class="des">{{fiveDates[2]}}</p>
+			<p>{{fiveDates[2]}}</p>
 			<p><b>{{fiveForecast[2]}}&deg;</b></p>
 			<p class="capitalize des">{{fiveConditions[2]}}</p>
 		</div>
 		<div class="col-md-1 col-xs-6" id="foreCastD">
-			<p class="des">{{fiveDates[3]}}</p>
+			<p>{{fiveDates[3]}}</p>
 			<p><b>{{fiveForecast[3]}}&deg;</b></p>
 			<p class="capitalize des">{{fiveConditions[3]}}</p>
 		</div>
-		<div class="col-md-1 col-xs-12" id="foreCastE">
+		<!--<div class="col-md-1 col-xs-12" id="foreCastE">
 			<p class="des">{{fiveDates[4]}}</p>
 			<p><b>{{fiveForecast[4]}}&deg;</b></p>
 			<p class="capitalize des">{{fiveConditions[4]}}</p>
-		</div>
-		</div>		
+		</div>-->
+		
 	</div>
 </div>
 <div class="container">
@@ -70,7 +74,12 @@
 		</div>	
 	</div>
 	<div class="row">
-		<div ng-show="eventful" class="col-md-12 col-xs-12" id="moreInfoBar"><p>Check out more exciting events around {{destination}} at <a href="www.eventful.com" target="_blank">Eventful.com</a>.</p></div>
+		<div class="col-md-12 col-xs-12" id="noEventsBar">
+			<h3>No events found for {{destination}}</h3>
+		</div>
+	</div>
+	<div class="row">
+		<div ng-show="eventful" class="col-md-12 col-xs-12" id="moreInfoBar"><p>Check out more exciting events around your destination at <a href="www.eventful.com" target="_blank">Eventful.com</a>.</p></div>
 	</div>
 </div>
 
