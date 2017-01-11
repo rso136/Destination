@@ -8,17 +8,21 @@ app.controller('mainCtrl', function($scope, $http, $sce) {
 
     $scope.search = function() {
 
+        var counter = 0;
+
         $('#noEventsBar').hide();
 
         $scope.introduction = false;
 
-        $('#eventBar').empty();
+        $('#eventBarA').empty();
+        $('#eventBarB').empty();
 
         //$scope.infoDisplay = true;
         //$scope.weatherInfo = true;
         //$scope.trafficInfo = true;
         //$scope.forecastDisplay = true;
-        $scope.eventDisplay = true;
+        $scope.eventDisplayA = true;
+        $scope.eventDisplayB = true;
         $scope.eventful = true;
         searchTermA = $scope.origin;
         searchTermB = $scope.destination;  
@@ -104,7 +108,7 @@ app.controller('mainCtrl', function($scope, $http, $sce) {
 
         EVDB.API.call("/events/search", oArgs, function(oData) {
 
-            //console.log(oData);
+            console.log(oData);
 
             if (oData.events == null) {
                 console.log('No events found');
@@ -171,8 +175,22 @@ app.controller('mainCtrl', function($scope, $http, $sce) {
                         var eventVenue = oData.events.event[i].venue_name;
                         var eventAddress = oData.events.event[i].venue_address;
                         var eventUrl = oData.events.event[i].url;
+                        
+                        if (counter <= 2) {
 
-                        $('#eventBar').append("<div class='eventBoxes col-md-4 col-xs-12'><p><b>" + eventTitle + "</b></p><a href=" + "'" + eventUrl + "'" + "><img src=" + "'" + imgSrc + "'" + " height='150' width='150'></a><p>Date: " + eventDate + "</p><p> " + eventVenue +"</p><p>" + eventAddress + "</p><a href=" + "'" + eventUrl + "'" + " target='_blank'>More Info</a></div>");
+                            $('#eventBarA').append("<div class='eventBoxes col-md-4 col-xs-12'><p><b>" + eventTitle + "</b></p><a href=" + "'" + eventUrl + "'" + "><img src=" + "'" + imgSrc + "'" + " height='150' width='150'></a><p>Date: " + eventDate + "</p><p> " + eventVenue +"</p><p>" + eventAddress + "</p><a href=" + "'" + eventUrl + "'" + " target='_blank'>More Info</a></div>");
+                            //console.log(eventTitle + ' appended to A');
+                            //console.log(counter);
+                            counter++;
+                        }
+                        else {
+
+                            $('#eventBarB').append("<div class='eventBoxes col-md-4 col-xs-12'><p><b>" + eventTitle + "</b></p><a href=" + "'" + eventUrl + "'" + "><img src=" + "'" + imgSrc + "'" + " height='150' width='150'></a><p>Date: " + eventDate + "</p><p> " + eventVenue +"</p><p>" + eventAddress + "</p><a href=" + "'" + eventUrl + "'" + " target='_blank'>More Info</a></div>");
+                            //console.log(eventTitle + ' appended to B');
+                            //console.log(counter);
+                            counter++;
+                        }
+                        
                     }
                 }                
             }

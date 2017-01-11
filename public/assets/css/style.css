@@ -107,7 +107,12 @@ li.menuOption > a > b {
   text-transform: capitalize;
 }
 
-#eventBar {
+#eventBarA {
+  text-align: center;
+  color: black;
+}
+
+#eventBarB {
   text-align: center;
   color: black;
 }
