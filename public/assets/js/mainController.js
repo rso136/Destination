@@ -178,14 +178,14 @@ app.controller('mainCtrl', function($scope, $http, $sce) {
                         
                         if (counter <= 2) {
 
-                            $('#eventBarA').append("<div class='eventBoxes col-md-4 col-xs-12'><p><b>" + eventTitle + "</b></p><a href=" + "'" + eventUrl + "'" + "><img src=" + "'" + imgSrc + "'" + " height='150' width='150'></a><p>Date: " + eventDate + "</p><p> " + eventVenue +"</p><p>" + eventAddress + "</p><a href=" + "'" + eventUrl + "'" + " target='_blank'>More Info</a></div>");
+                            $('#eventBarA').append("<div class='eventBoxes col-md-4 col-xs-12'><p><b>" + eventTitle + "</b></p><a href=" + "'" + eventUrl + "'" + "><img src=" + "'" + imgSrc + "'" + " height='150' width='150'></a><p>Date: " + eventDate + "</p><p> " + eventVenue +"</p><p>" + eventAddress + "</p><a class='btn btn-custom' href=" + "'" + eventUrl + "'" + " target='_blank'>More Info</a></div>");
                             //console.log(eventTitle + ' appended to A');
                             //console.log(counter);
                             counter++;
                         }
                         else {
 
-                            $('#eventBarB').append("<div class='eventBoxes col-md-4 col-xs-12'><p><b>" + eventTitle + "</b></p><a href=" + "'" + eventUrl + "'" + "><img src=" + "'" + imgSrc + "'" + " height='150' width='150'></a><p>Date: " + eventDate + "</p><p> " + eventVenue +"</p><p>" + eventAddress + "</p><a href=" + "'" + eventUrl + "'" + " target='_blank'>More Info</a></div>");
+                            $('#eventBarB').append("<div class='eventBoxes col-md-4 col-xs-12'><p><b>" + eventTitle + "</b></p><a href=" + "'" + eventUrl + "'" + "><img src=" + "'" + imgSrc + "'" + " height='150' width='150'></a><p>Date: " + eventDate + "</p><p> " + eventVenue +"</p><p>" + eventAddress + "</p><a class='btn btn-custom' href=" + "'" + eventUrl + "'" + " target='_blank'>More Info</a></div>");
                             //console.log(eventTitle + ' appended to B');
                             //console.log(counter);
                             counter++;
