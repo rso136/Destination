@@ -19,7 +19,7 @@
 </div>
 <div class="row">
 	<div ng-show="weatherErr" class="col-md-12 col-xs-12" id="errorBar">
-		<h3>Weather information unavailable for {{destination}}</h3>
+		<h3>Weather information unavailable for <span class="capitalize">{{destination}}</span></h3>
 	</div>
 </div>
 <div class="row">
@@ -30,7 +30,7 @@
 			<p id="temperature">{{temp}}&deg;</p>
 		</div>
 		<div ng-show='trafficInfo' class="col-md-4 col-xs-12" id="trafficBox">	
-			<h2>Current driving time to {{destination}}:</h2>
+			<h2>Current driving time to <span class="capitalize">{{destination}}:</span></h2>
 			<h2><b>{{driveTime}}</b></h2>
 			<h3 id="trafficLevel">Traffic level: {{congestion}}</h3>				
 		</div>	
@@ -68,8 +68,13 @@
 </div>
 <div class="container">
 	<div class="row">
+		<div ng-show="eventHeading" class="col-md-12 col-xs-12" id="eventHeading">
+			<h3>Upcoming Events in <span class="capitalize">{{destination}}:</span></h3>
+		</div>
+	</div>
+	<div class="row">
 		<div ng-show="eventDisplayA" class="col-md-12 col-xs-12" id="eventBarA">
-		
+			
 			
 		</div>	
 	</div>
@@ -79,7 +84,7 @@
 	</div>
 	<div class="row">
 		<div class="col-md-12 col-xs-12" id="noEventsBar">
-			<h3>No events found for {{destination}}</h3>
+			<h3>No events found for <span class="capitalize">{{destination}}</span></h3>
 		</div>
 	</div>
 	<div class="row">

@@ -23,6 +23,7 @@ app.controller('mainCtrl', function($scope, $http, $sce) {
         //$scope.forecastDisplay = true;
         $scope.eventDisplayA = true;
         $scope.eventDisplayB = true;
+        $scope.eventHeading = true;
         $scope.eventful = true;
         searchTermA = $scope.origin;
         searchTermB = $scope.destination;  
@@ -54,11 +55,14 @@ app.controller('mainCtrl', function($scope, $http, $sce) {
             $scope.forecast = response.data.weather[0].description;
 
         }, function(response) {
+
+            $scope.eventHeading = false;
             $scope.weatherErr = true;
             $scope.infoDisplay = false;
             $scope.weatherInfo = false;
             $scope.trafficInfo = false;
             $scope.forecastDisplay = false;
+
         });
 
         $http.get('http://api.openweathermap.org/data/2.5/forecast?q=' + searchTermB + '&APPID=445ee2cab6664981c9d3ccdd572f246b').then(function(response) {

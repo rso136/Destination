@@ -108,6 +108,11 @@ li.menuOption > a > b {
   text-transform: capitalize;
 }
 
+#eventHeading {
+  text-align: center;
+  color: black;
+}
+
 #eventBarA {
   text-align: center;
   color: black;
@@ -120,12 +125,14 @@ li.menuOption > a > b {
 
 #errorBar {
   text-align: center;
+  color: red;
   margin-top: 5vh;
   margin-bottom: 15vh;
 }
 
 #noEventsBar {
   margin-bottom: 15vh;
+  color: red;
   text-align: center;
 }
 
