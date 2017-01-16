@@ -42,8 +42,13 @@ li.menuOption > a > b {
   /*background-image: url("../assets/images/banner.jpeg");*/
   background-image: url("../images/jumboA.jpg");
   background-size: cover;
+  margin-bottom: 0;
   text-align: center;
   font-family: 'Questrial', sans-serif;
+}
+
+#queryBox {
+  margin-top: 2vh;
 }
 
 .btn-custom {
@@ -51,7 +56,7 @@ li.menuOption > a > b {
   color: white;
 }
 
-#heading {
+.heading {
 	font-family: 'Shadows Into Light', cursive;
 	color: white;
 }
@@ -63,8 +68,10 @@ li.menuOption > a > b {
 }
 
 #weatherBar {
-  margin-top: 5vh;
   background-color: black;
+  border-top: solid;
+  border-width: thin;
+  border-color: #bcbcbc;
   color: white;
   text-align: center;
 }

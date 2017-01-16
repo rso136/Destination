@@ -1,17 +1,22 @@
-<div class="row">
-	<div class="col-md-2 col-md-offset-5 col-xs-12">
-	<form ng-submit="search();">	
-		<input ng-model="origin" type="text" class="form-control" placeholder="Origin (e.g. Edison, NJ)" id="query" required/>
-		<br>
-    	<div class="input-group">
-			<input ng-model="destination" ng-model-options="{updateOn:'blur'}" type="text" class="form-control" placeholder="Destination (e.g. New York City)" required/>
-    		<span class="input-group-btn">
-        		<button class="btn btn-custom" type="submit"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></button>
-      		</span>    	
-    	</div>
-	</form>
-	</div>	
+<div class="jumbotron banner">
+    <h1>DESTINATION</h1>
+    <h2 class="heading">Informing today's journey</h2>
+    <div class="row">
+        <div class="col-md-2 col-md-offset-5 col-xs-8 col-xs-offset-2" id="queryBox">
+        <form ng-submit="search();">    
+            <input ng-model="origin" type="text" class="form-control" placeholder="Origin (e.g. Edison, NJ)" id="query" required/>
+            <br>
+            <div class="input-group">
+                <input ng-model="destination" ng-model-options="{updateOn:'blur'}" type="text" class="form-control" placeholder="Destination (e.g. New York City)" required/>
+                <span class="input-group-btn">
+                    <button class="btn btn-custom" type="submit"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></button>
+                </span>     
+            </div>
+        </form>
+        </div>  
+    </div>
 </div>
+<div class="container-fluid">
 <div class="row">
 	<div ng-show="introduction" class="col-md-12 col-xs-12" id="introBar">
 		<h2>Search for current weather, traffic, and upcoming events at your destination.</h2>
@@ -90,6 +95,7 @@
 	<div class="row">
 		<div ng-show="eventful" class="col-md-12 col-xs-12" id="moreInfoBar"><p>Check out more exciting events around your destination at <a href="www.eventful.com" target="_blank">Eventful.com</a>.</p></div>
 	</div>
+</div>
 </div>
 
 
