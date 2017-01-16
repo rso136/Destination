@@ -49,7 +49,7 @@ app.controller('mainCtrl', function($scope, $http, $sce) {
 
             var K = response.data.main.temp;
             var F = (K - 273.15) * 1.80 + 32;
-            //console.log(response);
+            console.log(response);
 
             $scope.temp = Math.round(F);
             $scope.forecast = response.data.weather[0].description;
@@ -80,7 +80,7 @@ app.controller('mainCtrl', function($scope, $http, $sce) {
             for (var i = 0; i < forecastLength; i++) {
 
                 if (response.data.list[i].dt_txt.substring(12, 13) == "2") {
-                    console.log(response.data.list[i].main.temp);
+                    //console.log(response.data.list[i].main.temp);
                     var KAlt = response.data.list[i].main.temp;
                     var FAlt = (KAlt - 273.15) * 1.80 + 32;
                     var tempAlt = Math.round(FAlt);
@@ -112,7 +112,7 @@ app.controller('mainCtrl', function($scope, $http, $sce) {
 
         EVDB.API.call("/events/search", oArgs, function(oData) {
 
-            console.log(oData);
+            //console.log(oData);
 
             if (oData.events == null) {
                 console.log('No events found');
