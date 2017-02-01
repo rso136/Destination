@@ -186,3 +186,11 @@ li.menuOption > a > b {
 #copyright {
   margin-top: 25px;
 }
+
+@media only screen and (max-width: 500px) {
+
+.banner {
+  height: 270px;
+}
+
+}
